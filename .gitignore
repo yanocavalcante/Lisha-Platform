@@ -1,0 +1,5 @@
+api.py
+*.key
+*.pem
+*.txt
+/venv
