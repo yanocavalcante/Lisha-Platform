@@ -1,0 +1,15 @@
+{
+  "credentials": {
+    "domain": "tutorial",
+    "username": "tutorial",
+    "password": "tuto20182"
+  },
+  "series": {
+    "version": "v1.1",
+    "unit": 0,
+    "x": 1,
+    "y": 1,
+    "z": 1,
+    "r": 10
+  }
+}

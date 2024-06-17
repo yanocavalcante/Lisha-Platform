@@ -6,13 +6,13 @@ import os, argparse, requests, json
 parser = argparse.ArgumentParser(description='EPOS Serial->IoT Gateway')
 
 required = parser.add_argument_group('required named arguments')
-required.add_argument('-c', '--certificate', help='Your PEM certificate', required=True)
-parser.add_argument('-u', '--url', help='Post URL', default='https://iot.lisha.ufsc.br/api/put.php')
+# required.add_argument('-c', '--certificate', help='Your PEM certificate', required=True)
+parser.add_argument('-u', '--url', help='Post URL', default='https://iot.lisha.ufsc.br/api/create.php')
 # required.add_argument('-j', '--json', help='JSON', required=True)
 
 args = vars(parser.parse_args())
 URL = args['url']
-MY_CERTIFICATE = (args['certificate'] + '.pem', args['certificate'] + '.key')
+# MY_CERTIFICATE = (args['certificate'] + '.pem', args['certificate'] + '.key')
 
 # Utilizando linha de comando para passar o JSON
 # JSON = args['json']
@@ -21,7 +21,7 @@ MY_CERTIFICATE = (args['certificate'] + '.pem', args['certificate'] + '.key')
 
 
 # # Utilizando arquivo externo
-f = open("series.json")
+f = open("example.json")
 data_series = json.load(f)
 JSON = data_series
 f.close()
@@ -29,7 +29,7 @@ f.close()
 
 #Das duas formas acima recebo 400
 session = requests.Session()
-session.cert = MY_CERTIFICATE
+# session.cert = MY_CERTIFICATE
 
 try:
     response = session.post(URL, json=JSON)
