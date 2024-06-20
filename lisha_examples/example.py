@@ -17,7 +17,7 @@ URL = args['url']
 # Utilizando linha de comando para passar o JSON
 # JSON = args['json']
 # JSON = json.loads(JSON)
-# Comando: python3 my_post_data.py -c labeco -j '{"version": "1.1", "unit": 2224437540, "value": 25, "uncertainty": 321313121, "x": 741868770, "y": 679816011, "z": 25285, "t": 1717612246019815, "dev": 0}'
+# Comando: python3 example.py -c labeco -j '{"credentials": {"domain": "tutorial", "username": "tutorial", "password": "tuto20182"}, "series": {"version": "1.1", "unit": 2224437540, "x": 741868770, "y": 679816011, "z": 25285, "r": 10}}'
 
 
 # # Utilizando arquivo externo
@@ -26,8 +26,7 @@ data_series = json.load(f)
 JSON = data_series
 f.close()
 
-
-#Das duas formas acima recebo 400
+# # Apenas obtenho sucesso com linha de comando 
 session = requests.Session()
 # session.cert = MY_CERTIFICATE
 
